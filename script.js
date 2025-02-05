@@ -13,13 +13,16 @@ function getComputerChoice(){
     }
 }
 
-
-
-// Create a function called getHumanChoice.
-    //Ask the user for an input and store it in userChoice
-    //See if user choice is valid or not.
-    //If valid go ahead, else ask again until valid
-    // return the valid choice
-
+function getHumanChoice() {
+    let userChoice = prompt(`Enter "R" for Rock, "S" for Scissors, "P" for Paper`);
+    if (userChoice === "R" || userChoice === "S" || userChoice=== "P") {
+        console.log(userChoice);
+        return userChoice;               
+    } else {
+        console.log("Invalid choice");
+        return "Invalid Choice";
+        
+    }
+}
 
 
