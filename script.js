@@ -14,15 +14,47 @@ function getComputerChoice(){
 }
 
 function getHumanChoice() {
-    let userChoice = prompt(`Enter "R" for Rock, "S" for Scissors, "P" for Paper`);
-    if (userChoice === "R" || userChoice === "S" || userChoice=== "P") {
-        console.log(userChoice);
+    let userChoice = prompt(`Enter Rock, Scissors or Paper`).toLowerCase();
+    if (userChoice === "rock" || userChoice ==="scissors" || userChoice==="paper") {
         return userChoice;               
     } else {
-        console.log("Invalid choice");
-        return "Invalid Choice";
+        return null;
         
     }
 }
+
+
+let humanScore = 0;
+let computerScore = 0;
+
+
+function playRound(humanChoice,computerChoice) {
+    if (humanChoice===computerChoice) {
+        console.log("Its a draw, You both picked the same one");
+    } else if (humanChoice == null) {
+        console.log("Your input was wrong. Please input either rock, paper or scissors");
+
+    } else if (humanChoice === "rock" && computerChoice === "scissors"
+                || humanChoice === "scissors" && computerChoice === "paper" 
+                || humanChoice === "paper" && computerChoice === "rock") {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}!!`);
+        humanScore ++;
+        console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`);
+        
+
+    } else {
+        console.log(`You lose! ${computerChoice} beats ${humanChoice} !!`);
+        computerScore++;
+        console.log(`Your score: ${humanScore}, || Computer score: ${computerScore}`);
+    }
+
+}
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+playRound(humanChoice,computerChoice);
+
+
 
 
