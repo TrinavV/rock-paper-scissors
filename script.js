@@ -18,8 +18,7 @@ function getHumanChoice() {
     if (userChoice === "rock" || userChoice ==="scissors" || userChoice==="paper") {
         return userChoice;               
     } else {
-        return null;
-        
+        return null;   
     }
 }
 
@@ -50,11 +49,22 @@ function playRound(humanChoice,computerChoice) {
 
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
 
-playRound(humanChoice,computerChoice);
+let count = 0;
 
+function playGame() {
+    for(count=0;count<=4;count++) {
+        playRound(getHumanChoice(),getComputerChoice());   
+    }
+    console.log(" Your Final score: ", humanScore);
+    console.log("Computer Final score:" ,computerScore);
+    if(humanScore > computerScore) {
+        console.log("Congratulations!! You win the game!!");
+    } else if (humanScore < computerScore){
+        console.log('You lose! Better luck next time!!')
+    } else {
+        console.log("Its a draw!")
+    }
+}
 
-
-
+playGame();
