@@ -63,7 +63,7 @@ function playGame() {
     } else if (humanScore < computerScore){
         console.log('You lose! Better luck next time!!')
     } else {
-        console.log("Its a draw!")
+        console.log("Its a draw!");
     }
 }
 
